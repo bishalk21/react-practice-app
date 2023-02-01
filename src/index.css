@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 10px 20px 10px 20px;
+  padding: 10px;
+}
+
+.header {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.menu-list ul {
+  display: flex;
+}
+
+.menu-list ul ol {
+  list-style: none;
+}
+
+.card {
+  width: 240px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card > img {
+  width: 100%;
+}
+
+.restro-card {
+  display: flex;
+  flex-wrap: wrap;
+}
