@@ -11,9 +11,10 @@ const SearchInputField = ({ restaurants, setNewRestaurants }) => {
   const [searchText, setSearchText] = useState("");
 
   // const [textFalse, setTrue] = useState("false");
+  console.log(restaurants);
 
   const handleOnChange = (e) => {
-    const { value } = e.target;
+    const { value } = e.target.value;
     setSearchText(value);
   };
 

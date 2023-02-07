@@ -5,8 +5,9 @@ import SearchInputField from "../search-input/SearchInputField";
 
 // props - properties
 const BodyComponent = () => {
-  // const [restaurants, setRestaurants] = useState(restrauList);
-  const [restaurants, setNewRestaurants] = useState(restrauList);
+  const [restaurants, setRestaurants] = useState(restrauList);
+  const [newRestaurants, setNewRestaurants] = useState([]);
+  console.log(newRestaurants);
 
   return (
     <>
@@ -21,7 +22,7 @@ const BodyComponent = () => {
         <RestaurantCard {...restrauList[2].data} />
         <RestaurantCard {...restrauList[3].data} /> */}
 
-        {restaurants.map((restaurant) => {
+        {newRestaurants.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
           );
