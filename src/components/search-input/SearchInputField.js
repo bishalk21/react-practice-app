@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchInputField = ({ restaurants, setNewRestaurants }) => {
+const SearchInputField = ({ restaurants, setFilteredRestaurants }) => {
   // const [restaurants, setRestaurants] = useState
 
   // const searchText = "KFC";
@@ -12,6 +12,8 @@ const SearchInputField = ({ restaurants, setNewRestaurants }) => {
 
   // const [textFalse, setTrue] = useState("false");
 
+  // dependency array [searchText] - once after initial render + every time after re-render (my searchText changes)
+
   const handleOnChange = (e) => {
     const { value } = e.target;
     setSearchText(value);
@@ -19,7 +21,7 @@ const SearchInputField = ({ restaurants, setNewRestaurants }) => {
 
   function filterData(searchText, restaurants) {
     const filterData = restaurants.filter((restaurant) =>
-      restaurant.data.name.includes(searchText)
+      restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase())
     );
     return filterData;
   }
@@ -38,7 +40,7 @@ const SearchInputField = ({ restaurants, setNewRestaurants }) => {
     console.log(data);
 
     // update the state
-    setNewRestaurants(data);
+    setFilteredRestaurants(data);
   };
 
   return (
